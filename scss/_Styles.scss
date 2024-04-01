@@ -1,0 +1,164 @@
+
+@mixin d-flex($justifyContent:"start", $alignItems:"start"){
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+
+
+
+.users-page{
+    background-color:#E6EAF8 ;
+    height: 100vh;
+    width: 100%;
+  @include d-flex(center,center);
+
+    .user-wrapper{
+        width: 1213px;
+        height: 830px;
+        background-color: #fff;
+        border-radius:16px ;
+        padding: 100px;
+
+        h1{
+            font-size: 32px;
+            color: #151B32;
+            line-height: 40px;
+            font-weight: 900; 
+            margin-bottom: 24px;
+        }
+
+        .users-header{
+            @include d-flex(space-between);
+
+            .input-div{
+                position: relative;
+
+                input{
+                    width: 327px;
+                    height: 64px;
+                    border: 1px solid #BFC8E5;
+                    border-radius: 4px;
+                    opacity: 0.7;
+                    outline: none;
+                    font-size: 16px;
+                    padding-left: 56px;
+
+                }
+                img{
+                    position: absolute;
+                    top: 16px;
+                    left: 16px;
+                }
+            }
+            .navigation{
+                @include d-flex(start,center);
+
+                li{
+                    padding: 16px;
+                    a{
+                        color: #151B32;
+                        opacity: 0.8;
+                    }
+                    
+                }
+                .active{
+                    background-color:#849FFF ;
+                    border-radius: 8px;
+
+                    a{
+                        color: #fff;
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+
+        .users-list{
+            margin-top: 70px;
+            @include d-flex( );
+            flex-wrap: wrap;
+            gap: 16px;
+
+            .user-card{
+                width: 327px;
+                height: 208px;
+                padding: 15px;
+                @include d-flex();
+                column-gap: 10px;
+                border: 1px solid transparent;
+                transition: all 0.3s ease;
+
+
+                &:hover{
+                    border: 1px solid #BFC8E5;
+                    border-radius: 16px;
+                    box-shadow: 0px 8px 23px 0px #DAE0F9B2;
+                    cursor: pointer;
+
+                }
+
+
+                img{
+                    width: 97px;
+                    height: 97px;
+                }
+                .user-desc{
+                    width: 125px;
+                    height: 68px;
+                    h3{
+                        font-size: 18px;
+                            line-height: 22px;
+                            color: #151B32;
+                            font-weight: 900;
+                            margin-top: 20px;
+                            
+                    }
+                    p{
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 21px;
+                        color: #151B32;
+                        margin-top: 4px;
+                    }
+                }
+                
+                
+                .hobby{
+                    @include d-flex( );
+                    width: 150px;
+                    height: 50px;
+                    margin-top: 10px;
+                    column-gap: 4px;
+                    flex-wrap: wrap;
+                    
+                    
+
+                    p{
+                        width: 65px;
+                        height: 22px;
+                        border-radius: 16px;
+                        border: 1px solid #BFC8E5;
+                        padding: 2px 8px;
+                        @include d-flex(center,center );
+                        color: #516FD4;
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                    .user-4{
+                        width: 81px;
+                       }
+                }
+               .user-3{
+                width: 205px;
+                
+               }
+               
+            }
+
+        }
+    }
+}
+
